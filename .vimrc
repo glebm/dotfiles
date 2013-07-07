@@ -1,3 +1,4 @@
+:set nocompatible
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -9,16 +10,17 @@ call pathogen#runtime_append_all_bundles()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set term=screen-256color
-"set t_Co=256
+set term=screen-256color
+set t_Co=256
 
-set background=dark
-let g:solarized_termcolors=16
+set background=light
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 so ~/.vim/bundle/vim-colors-solarized/autoload/togglebg.vim
 
 syntax on
-" colorscheme maroloccio3
-colorscheme zenburn
+"colorscheme maroloccio3
+"colorscheme zenburn
 set guifont=Mensch:h13
 set antialias
 

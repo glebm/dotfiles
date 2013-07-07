@@ -1,5 +1,8 @@
 unsetopt correct_all
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 # Customize to your needs...
 export PATH=$HOME/.dotfiles/tools:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
@@ -158,9 +161,9 @@ function cdf() { cd *$1*/ } # stolen from @topfunky
 # source ~/.git-completion.bash
 
 # Unbreak broken, non-colored terminal
-#export TERM='xterm-color'
-#export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-#export GREP_OPTIONS="--color"
+export TERM='xterm-color'
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+export GREP_OPTIONS="--color"
 
 # Unbreak history
 export HISTSIZE=100000
