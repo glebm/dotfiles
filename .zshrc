@@ -3,8 +3,10 @@ unsetopt correct_all
 # Customize to your needs...
 export PATH=$HOME/.dotfiles/tools:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
-# Android SDK
-export PATH=/usr/local/android/sdk/platform-tools:/usr/local/android/sdk/tools:$PATH
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH:/Users/glebm/bin:/usr/local/share/npm/bin:./node_modules/.bin
+# Android tools
+export PATH=$PATH:$HOME/android/android-sdk/sdk/platform-tools
 
 if [ -d "$HOME/.rbenv" ]; then
   export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
@@ -34,7 +36,9 @@ alias gpu="git push -u origin/master"
 alias gf="git fetch"
 alias gm="git merge origin/master"
 alias gco="git checkout"
-alias gst="git status"
+alias ga="git a"
+alias gs="git s" # status
+alias gd="git diff"
 alias gsta="git stash"
 alias gstp="git stash pop"
 alias gcob="git checkout -b"
@@ -48,27 +52,7 @@ function gccm () {
   git commit -m "$*";
 }
 
-alias spk="bundle exec spork cucumber & bundle exec spork"
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
-alias sstr="sudo apachectl start"
-alias sstp="sudo apachectl stop"
-alias srt="sudo apachectl restart"
-alias nstart="sudo nginx"
-alias nstop="sudo nginx -s stop"
-alias nreload="sudo nginx -s reload"
-alias nstat="sudo lsof -i -P"
-
-# Vagrant
-alias vu='vagrant up'
-alias vun='vagrant up --no-provision'
-alias vr='vagrant reload'
-alias vrn='vagrant reload --no-provision'
-alias vh='vagrant halt'
-alias vs='vagrant suspend'
-alias vssh='vagrant ssh'
-
-# Capistrano
-alias deploy='cap deploy'
 
 # Projects
 function proj () {
@@ -92,16 +76,6 @@ function setproj () {
   echo $1 > $current
 }
 
-# Ruby Apps
-alias prodlog="tail -n 300 -f log/production.log"
-alias devlog="tail -n 300 -f log/development.log"
-alias staglog="tail -n 300 -f log/staging.log"
-
-alias phpdoc="thor php:open"
-
-alias powstop="curl get.pow.cx/uninstall.sh | sh"
-alias powstart="curl get.pow.cx | sh"
-
 alias g="git"
 alias ports="sudo lsof -i -P"
 export EDITOR="vim"
@@ -114,8 +88,6 @@ alias lll='ls'
 alias lsl="ls -lG"
 alias lsla="ls -laG"
 alias shortcuts="bind -P | less"
-
-alias nodedoc="open /usr/local/src/nodejs_all/node-v0.3.0/doc/api.html"
 
 alias v="vim ."
 alias m="mvim ."
@@ -132,25 +104,7 @@ alias bo="bundle open"
 alias migrate="bundle exec rake db:migrate"
 alias dpl="bundle exec cap deploy"
 
-alias nsta="sudo nginx"
-alias nsto="sudo nginx -s stop"
-alias nres="sudo nginx -s reload"
-alias ntest="sudo nginx -t $*"
-
-alias rbgrep="grep --include='*.rb' $*"
 alias r="bundle exec rails"
-alias rdbm="bundle exec rake db:migrate db:test:prepare"
-alias rdbr="bundle exec rake db:rollback"
-
-alias uni="bundle exec unicorn -p 3000"
-alias pm="bundle exec puma -p 3000"
-
-alias rr='rbenv rehash'
-
-alias cpl="bundle exec rake assets:precompile"
-alias clean="bundle exec rake assets:clean"
-
-alias sr="screen -r"
 
 alias t="TERM=screen-256color-bce tmux"
 function tcwd () {
@@ -198,34 +152,15 @@ function model {
     done
 }
 
-# ACTUAL CUSTOMIZATION OH NOES!
-bindkey "^[[3~" delete-char
-
-function routes() {
-  if [ -n "$1" ]; then
-    bundle exec rake routes | grep $1
-  else
-    bundle exec rake routes
-  fi
-}
-
 function cdf() { cd *$1*/ } # stolen from @topfunky
-# Originally from Jonathan Penn, with modifications by Gary Bernhardt
-function whodoneit() {
-    (set -e &&
-        for x in $(git grep -I --name-only $1); do
-            git blame -f -- $x | grep $1;
-        done
-    )
-}
 
 # Git tab completion
 # source ~/.git-completion.bash
 
 # Unbreak broken, non-colored terminal
-export TERM='xterm-color'
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-export GREP_OPTIONS="--color"
+#export TERM='xterm-color'
+#export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+#export GREP_OPTIONS="--color"
 
 # Unbreak history
 export HISTSIZE=100000

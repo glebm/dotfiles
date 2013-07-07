@@ -1,6 +1,6 @@
 [user]
-    name = Aaron Cruz
-    email = aaron@aaroncruz.com
+    name  = Gleb Mazovetskiy
+    email = glex.spb@gmail.com
 
 [alias]
     a = add
@@ -144,4 +144,4 @@
   textconv = unzip -c -a
 
 [github]
-    user = pferdefleisch
+    user = glebm 
