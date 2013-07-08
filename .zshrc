@@ -1,5 +1,10 @@
 unsetopt correct_all
 
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
+bindkey '' beginning-of-line
+bindkey "" end-of-line
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -47,7 +52,7 @@ alias gstp="git stash pop"
 alias gcob="git checkout -b"
 alias gaa="git add --all"
 alias gc="git commit"
-alias gca="git commit --ammend"
+alias gca="git commit --amend"
 alias gl="git log"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
