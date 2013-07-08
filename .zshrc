@@ -9,7 +9,7 @@ bindkey "" end-of-line
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Customize to your needs...
-export PATH=$HOME/.dotfiles/tools:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:$HOME/.dotfiles/tools:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
 homebrew=/usr/local/bin:/usr/local/sbin
 export PATH=$homebrew:$PATH:/Users/glebm/bin:/usr/local/share/npm/bin:./node_modules/.bin
