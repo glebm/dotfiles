@@ -33,6 +33,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# RVM aliases
+alias rvm-temp='rvm use 2.0.0@temp'
+
+
 # Customize to your needs...
 
 # Edit this file
@@ -59,6 +63,9 @@ alias glg="git log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Cre
 function gccm () {
   git commit -m "$*";
 }
+
+# Rails
+alias zs='zeus'
 
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 
