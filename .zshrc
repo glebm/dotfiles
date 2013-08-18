@@ -1,7 +1,10 @@
 unsetopt correct_all
 
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export CURL_CA_BUNDLE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+export SSL_SERT_FILE=$CURL_CA_BUNDLE
 
 bindkey '' beginning-of-line
 bindkey "" end-of-line
@@ -32,8 +35,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 
-# RVM 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"¬
+# RVM
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  source "$HOME/.rvm/scripts/rvm"
+  export PATH=$PATH:$HOME/.rvm/bin 
+  # Add RVM to PATH for scripting¬
+fi
+
 alias rvm-temp='rvm use 2.0.0@temp'
 
 
@@ -190,3 +198,4 @@ export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
+

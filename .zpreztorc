@@ -32,7 +32,11 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt'
+  'prompt' \
+  'git' \
+  'history-substring-search' \
+  'osx'
+
 
 #
 # Editor
@@ -61,6 +65,8 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 # History Substring Search
 #
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # Set the query found color.
 # zstyle ':prezto:module:history-substring-search:color' found ''
@@ -85,7 +91,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'minimal'
 
 #
 # Screen
