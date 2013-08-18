@@ -3,8 +3,12 @@ unsetopt correct_all
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export CURL_CA_BUNDLE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-export SSL_SERT_FILE=$CURL_CA_BUNDLE
+# Use brew curl-ca-bundle if exists:
+BREW_CURL_CA_BUNDLE='/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt'
+if [[ -s $BREW_CURL_CA_BUNDLE ]]; then
+  export CURL_CA_BUNDLE=$BREW_CURL_CA_BUNDLE
+  export SSL_CERT_FILE=$BREW_CURL_CA_BUNDLE
+fi
 
 bindkey '' beginning-of-line
 bindkey "" end-of-line
