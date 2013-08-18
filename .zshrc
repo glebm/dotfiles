@@ -6,8 +6,6 @@ export LANG=en_US.UTF-8
 bindkey '' beginning-of-line
 bindkey "" end-of-line
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 # Customize to your needs...
 export PATH=$PATH:$HOME/.dotfiles/tools:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
@@ -33,7 +31,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# RVM aliases
+
+# RVM 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"¬
 alias rvm-temp='rvm use 2.0.0@temp'
 
 

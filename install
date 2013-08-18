@@ -20,6 +20,9 @@ setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -nfs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
+
+rm ~/.zpreztorc
+ln -nfs ~/.dotfiles/.zpreztorc ~/.zpreztorc
 #######################################
 # DOTFILES
 #######################################
@@ -28,7 +31,7 @@ ln -nfs ~/.dotfiles/.zshenv ~/.zshenv
 ln -nfs ~/.dotfiles/.vimrc ~/.vimrc
 ln -nfs ~/.dotfiles/.vim/ ~/.vim
 ln -nfs ~/.dotfiles/.gemrc ~/.gemrc
-ln -nfs ~/.dotfiles/.gitconf ~/.gitconf
+ln -nfs ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -nfs ~/.dotfiles/.tmux.conf ~/.tmux.conf
 touch $HOME/.z
 #######################################
