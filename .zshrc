@@ -49,6 +49,7 @@ alias rvm-temp='rvm use 2.0.0@temp'
 
 # Edit this file
 alias zrc="vim ~/.zshrc && source ~/.zshrc"
+alias zrc-reload="source ~/.zshrc"
 
 # GIT
 alias gp="git push"
