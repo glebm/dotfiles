@@ -79,6 +79,7 @@ function gccm () {
 
 # Rails
 alias zs='zeus'
+alias mm='middleman'
 
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 
@@ -204,3 +205,5 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
+
+[ -s "/Users/glebm/.scm_breeze/scm_breeze.sh" ] && source "/Users/glebm/.scm_breeze/scm_breeze.sh"

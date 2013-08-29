@@ -23,6 +23,7 @@ done
 
 rm ~/.zpreztorc
 ln -nfs ~/.dotfiles/.zpreztorc ~/.zpreztorc
+
 #######################################
 # DOTFILES
 #######################################
