@@ -144,3 +144,5 @@
 
 [github]
     user = glebm 
+[credential]
+	helper = osxkeychain
