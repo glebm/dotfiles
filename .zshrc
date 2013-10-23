@@ -10,16 +10,26 @@ if [[ -s $BREW_CURL_CA_BUNDLE ]]; then
   export SSL_CERT_FILE=$BREW_CURL_CA_BUNDLE
 fi
 
-bindkey '' beginning-of-line
-bindkey "" end-of-line
+bindkey -v
+bindkey '^K' kill-whole-line                      # ctrl-k
+bindkey "^R" history-incremental-search-backward  # ctrl-r
+bindkey "^A" beginning-of-line                    # ctrl-a  
+bindkey "^E" end-of-line                          # ctrl-e
+#bindkey "[B": history-search-forward              # down arrow
+#bindkey "[A": history-search-backward             # up arrow
+bindkey "b" backward-word                      # option left
+bindkey "f" forward-word                       # option right
 
 # Customize to your needs...
-export PATH=$PATH:$HOME/.dotfiles/tools:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:$HOME/bin:$HOME/.dotfiles/tools:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
 homebrew=/usr/local/bin:/usr/local/sbin
 export PATH=$homebrew:$PATH:/Users/glebm/bin:/usr/local/share/npm/bin:./node_modules/.bin
 # Android tools
 export PATH=$PATH:$HOME/android/android-sdk/sdk/platform-tools
+
+# Pebble dev tools
+export PATH=~/pebble-dev/arm-cs-tools/bin:$PATH
 
 if [ -d "$HOME/.rbenv" ]; then
   export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH

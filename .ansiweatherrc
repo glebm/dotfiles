@@ -1,0 +1,8 @@
+location:Madrid,ES
+fetch_cmd:ftp -V -o -
+units:metric
+symbols:true
+background: 
+text: [37m
+delimiter:[37mat
+dashes:[30;1m|
