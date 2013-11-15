@@ -112,6 +112,8 @@
     whitespace = trailing-space,space-before-tab
     quotepath = false
     editor = vim
+    pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight
+
 [rerere]
     enabled = 1
 
