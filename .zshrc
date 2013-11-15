@@ -2,6 +2,15 @@ unsetopt correct_all
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export PEBBLE_SDK=$HOME/pebble-dev/PebbleSDK-1.12/Pebble
+
+alias pebble-sdk-symlink="$PEBBLE_SDK/tools/create_pebble_project.py --symlink-only $PEBBLE_SDK/sdk"
+
+gh-merge-pr() {
+  if [ $1 ]; then git fetch origin pull/$1/head:pr-$1; else echo 'usage: gh-merge-pr PR_ID'; fi
+}
+
+
 
 # Use brew curl-ca-bundle if exists:
 BREW_CURL_CA_BUNDLE='/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt'
