@@ -10,7 +10,7 @@ gh-merge-pr() {
   if [ $1 ]; then git fetch origin pull/$1/head:pr-$1; else echo 'usage: gh-merge-pr PR_ID'; fi
 }
 
-
+setopt interactivecomments
 
 # Use brew curl-ca-bundle if exists:
 BREW_CURL_CA_BUNDLE='/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt'
