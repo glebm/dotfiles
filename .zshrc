@@ -7,7 +7,9 @@ export PEBBLE_SDK=$HOME/pebble-dev/PebbleSDK-1.12/Pebble
 alias pebble-sdk-symlink="$PEBBLE_SDK/tools/create_pebble_project.py --symlink-only $PEBBLE_SDK/sdk"
 
 gh-merge-pr() {
-  if [ $1 ]; then git fetch origin pull/$1/head:pr-$1; else echo 'usage: gh-merge-pr PR_ID'; fi
+  if [ $2 ]; then remote=$2; fi
+  remote=${remote:-origin}
+  if [ $1 ]; then git fetch $remote pull/$1/head:pr-$1; else echo 'usage: gh-merge-pr PR_ID [REMOTE_NAME]'; fi
 }
 
 setopt interactivecomments
@@ -96,10 +98,13 @@ function gccm () {
   git commit -m "$*";
 }
 
+# Vagrnt
+alias vg='vagrant'
+
 # Rails
 alias zs='zeus'
 alias mm='middleman'
-
+alias rsd='rspec -fd'
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 
 # Projects
@@ -153,11 +158,6 @@ alias migrate="bundle exec rake db:migrate"
 alias dpl="bundle exec cap deploy"
 
 alias r="bundle exec rails"
-
-alias t="TERM=screen-256color-bce tmux"
-function tcwd () {
-  tmux set-option default-path $PWD
-}
 
 alias start='consular start'
 alias edit='consular edit'
@@ -218,11 +218,15 @@ export SAVEHIST=$HISTSIZE
 export WORDCHARS='*?[]~&;!$%^<>'
 export ACK_COLOR_MATCH='red'
 # Rails perf increase https://gist.github.com/1688857
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_HEAP_INIT_SLOTS=1000000
+export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=1000000
+export RUBY_GC_HEAP_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
+export RUBY_GC_HEAP_FREE_SLOTS=500000
 
 
 [ -s "/Users/glebm/.scm_breeze/scm_breeze.sh" ] && source "/Users/glebm/.scm_breeze/scm_breeze.sh"
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+# added by travis gem
+[ -f /Users/glebm/.travis/travis.sh ] && source /Users/glebm/.travis/travis.sh
