@@ -1,3 +1,6 @@
+[submodule "alfred/Spotify-for-Alfred"]
+	path = alfred/Spotify-for-Alfred
+	url = https://github.com/citelao/Spotify-for-Alfred
 [submodule ".vim/bundle/vim-rails"]
 	path = .vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
